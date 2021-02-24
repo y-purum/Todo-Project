@@ -13,10 +13,16 @@ class TodoListSerializer(serializers.ModelSerializer):
 class TodoDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
-        fields = ('author', 'title', 'contents', 'contents_type', 'id', 'create_date', 'update_date')
+        fields = ('author', 'title', 'contents', 'contents_type', 'id', 'create_date', 'update_date', 'view')
 
 
 class UserTodoListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
         fields = '__all__'
+
+
+# class SearchSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Todo
+#         fields = ('author', 'title')

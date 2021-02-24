@@ -1,7 +1,9 @@
-from rest_framework.views import APIView
-from rest_framework import permissions
-from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import filters
+from rest_framework import generics
+from rest_framework import permissions
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from django.http import Http404
 from .models import Todo
@@ -9,20 +11,12 @@ from accounts.models import User
 from todoapp.api.serializers import TodoListSerializer, TodoDetailSerializer, UserTodoListSerializer
 
 
-class TodoList(APIView):
+class TodoList(generics.ListCreateAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoListSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
-    def get(self, request, format=None):
-        queryset = Todo.objects.all()
-        serializer = TodoListSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = TodoListSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(author=self.request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title', 'contents']
 
 
 class TodoDetail(APIView):
@@ -36,7 +30,14 @@ class TodoDetail(APIView):
     
     def get(self, request, pk, format=None):
         todo = self.get_object(pk)
+        todo.view += 1
         serializer = TodoDetailSerializer(todo)
+
+        if todo.view >= 999:
+            return Response(serializer.data)
+
+        todo.save()
+
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):

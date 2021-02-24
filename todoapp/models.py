@@ -15,6 +15,7 @@ class Todo(models.Model):
     contents_type = models.CharField(choices=TYPE_CHOICES, max_length=16, null=True)
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
+    view = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['-create_date']
