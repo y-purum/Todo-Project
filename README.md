@@ -11,7 +11,7 @@
 ## 3. 구현 기능
 * 회원가입, 로그인, 소셜로그인
 * 프로젝트별 관리
-* 할일 등록, 조회, 수정, 삭제
+- 할일 등록, 조회, 수정, 삭제
  * 카테고리별 필터 제공
  * 마감 날짜 표시
  * 조회수 표시
@@ -20,13 +20,13 @@
 * 검색
 
 ## 4. 사용 방법
-* [permissions.IsAuthenticatedOrReadOnly].  
+* [permissions.IsAuthenticatedOrReadOnly]  
   적용으로 가입하지 않은 회원은 Todo-List 등록 및 댓글 작성이 불가하며, 조회만 가능합니다.
-* http://127.0.0.1:8000/accounts/join.  
+* http://127.0.0.1:8000/accounts/join  
   회원가입 : email / username / password 3가지 필수 요소.
-* http://127.0.0.1:8000/todos/projects.  
+* http://127.0.0.1:8000/todos/projects  
   프로젝트 : 조회 or 등록
-* http://127.0.0.1:8000/todos/list.  
+* http://127.0.0.1:8000/todos/list  
   할일(Todo, Doing, Done) : 조회 or 등록
-* http://127.0.0.1:8000/todos/users/{user_id}.  
+* http://127.0.0.1:8000/todos/users/{user_id}  
   특정 유저 : 프로젝트 조회
