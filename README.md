@@ -1,7 +1,7 @@
 # Todo-Project
 ## 1. 소개
-### 프로젝트별 관리가 가능한 Todo-List API Server
-### 할일은 프로젝트와 단계(Todo, Doing, Done)별로 나누어 관리할 수 있습니다.
+프로젝트별 관리가 가능한 Todo-List API Server
+할일은 프로젝트와 단계(Todo, Doing, Done)별로 나누어 관리할 수 있습니다.
 
 ## 2. 기술 스텍
 * Python 3.8.5
