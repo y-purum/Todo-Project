@@ -23,7 +23,7 @@
 * [permissions.IsAuthenticatedOrReadOnly]  
   적용으로 가입하지 않은 회원은 Todo-List 등록 및 댓글 작성이 불가하며, 조회만 가능합니다.
 * http://127.0.0.1:8000/accounts/join  
-  회원가입 : email / username / password 3가지 필수 요소.
+  회원가입 : email / username / password 필요
 * http://127.0.0.1:8000/todos/projects  
   프로젝트 : 조회 or 등록
 * http://127.0.0.1:8000/todos/list  
