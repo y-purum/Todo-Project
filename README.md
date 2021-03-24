@@ -6,7 +6,7 @@
 ## 2. 기술 스텍
 * Python 3.8.5
 * Django 3.1.4
-* DRF(Django Rest Framework)
+* DRF(Django Rest Framework) 3.12.2
 
 ## 3. 구현 기능
 * 회원가입, 로그인, 소셜로그인
