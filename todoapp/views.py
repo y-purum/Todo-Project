@@ -60,7 +60,7 @@ class ProjectDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class TodoList(generics.ListCreateAPIView):
+class TodoList(generics.ListCreateAPIView, generics.RetrieveUpdateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoListSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
