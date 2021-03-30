@@ -39,24 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'rest_auth',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
 
     'django_filters',
     
     # my app
     'accounts',
     'accounts_social',
-    'todoapp',
     'comments',
+    'todoapp',
 
     # allauth
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
+    'django.contrib.sites',
     'rest_auth.registration',
 ]
 

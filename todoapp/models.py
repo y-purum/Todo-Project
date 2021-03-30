@@ -35,8 +35,3 @@ class Todo(models.Model):
 
     class Meta:
         ordering = ['-create_date']
-
-
-# class LikeOrDislike(models.Model ):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-#     contents = models.TextField()
