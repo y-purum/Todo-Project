@@ -5,7 +5,11 @@ from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+import os
+from PIL import Image
+
 import datetime
+from glob import glob
 from django.http import Http404
 from accounts.models import User
 from .models import Project
@@ -110,3 +114,17 @@ class UserTodoList(APIView):
         objects = Todo.objects.filter(author=pk)
         serializer = UserTodoListSerializer(objects, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+class ImageResize():
+    img_list = os.listdir('media/')
+
+    for img_name in img_list:
+        try: 
+            img = Image.open('media/'+img_name)
+            img_resize = img.resize((round(img.size[0]*0.5), round(img.size[1]*0.5)))
+            img_resize.save('resize/'+img_name)
+            img.close()
+        except ValueError:
+            print('Invalid image file')
+            

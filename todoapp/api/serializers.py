@@ -15,7 +15,7 @@ class TodoListSerializer(serializers.ModelSerializer):
     contents_type = serializers.CharField(write_only=True)
     class Meta:
         model = Todo
-        fields = ('projects', 'author', 'title', 'contents', 'contents_type', 'id')
+        fields = ('projects', 'author', 'title', 'contents', 'contents_type', 'id', 'image')
 
 
 class TodoDetailSerializer(serializers.ModelSerializer):

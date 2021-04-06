@@ -32,6 +32,8 @@ class Todo(models.Model):
     update_date = models.DateTimeField(auto_now=True)
     end_date = models.DateTimeField(null=True)
     view = models.IntegerField(default=0)
+    image = models.ImageField(null=True, blank=True)
+
 
     class Meta:
         ordering = ['-create_date']
