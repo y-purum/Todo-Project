@@ -127,4 +127,3 @@ class ImageResize():
             img.close()
         except ValueError:
             print('Invalid image file')
-            
